@@ -1,0 +1,29 @@
+$colour-primary: #231651
+$colour-secondary: #2374AB
+$colour-light: #D6FFF6
+
+.roundedborder
+  border-radius: .5em
+  border: 1px solid black
+
+div
+    text-align: center
+    label
+        text-align: right
+
+input[type='text']
+  @extend .roundedborder
+  font-size:1em
+  margin:.2em 0 0.2em
+  padding: .2em
+  width:60%
+
+
+button
+  @extend .roundedborder
+  font-size:1em
+  margin:.2em 0 0.2em
+  padding: .2em
+  width:45%
+  background-color: $colour-secondary
+  color: white

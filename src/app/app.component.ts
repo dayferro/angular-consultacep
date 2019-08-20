@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'projeto-angular-bitseguros';
+  cep = '';
+  endereco = {};
+
+  constructor(private httpClient: HttpClient) { }
+
+  public get_products() {
+    this.httpClient.get(`https://viacep.com.br/ws/${this.cep}/json/`).subscribe((res) => {
+        this.endereco = res;
+    });
+  }
 }
